@@ -1,0 +1,40 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.header-left-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.header-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    background: rgb(30,182,55);
+    background: linear-gradient(90deg, rgba(30,182,55,1) 0%, rgba(4,152,129,1) 100%);
+    width: 200px;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+}
+
+.header-page-button {
+    background-color: #424242;
+	border-radius: 20px;
+    padding: 0px 10px;
+	cursor: pointer;
+	color: white;
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+}
