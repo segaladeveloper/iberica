@@ -2,6 +2,8 @@ import './App.css';
 import { useCurrentUser } from 'thin-backend-react';
 import { useState } from 'react';
 import Constantes from './Constantes';
+import Home from './Home/Home';
+import Cursos from './Cursos/Cursos';
 
 function App() {
   const [pagina, setPagina] = useState(Constantes.PAGINAS.HOME);
