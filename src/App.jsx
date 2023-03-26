@@ -18,7 +18,7 @@ function App() {
   const [page, setPage] = useState(Constants.PAGES.FEATURES);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const user = useCurrentUser();
-  const features = useQuery(query('products').orderByDesc('id'));
+  const features = useQuery(query('curso').orderByDesc('id'));
   const handleClose = () => setOpen(false);
 
   const handleSelectCatagory = (event, newAlignment) => {

@@ -8,12 +8,12 @@ import { initThinBackend } from 'thin-backend';
 import { ThinBackend } from 'thin-backend-react';
 
 initThinBackend({
-    host: 'https://buy-a-feature.thinbackend.app'
+    host: 'https://iberica.thinbackend.app'
 });
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThinBackend requireLogin>
+        <ThinBackend>
             <App />
         </ThinBackend>
     </React.StrictMode>,
