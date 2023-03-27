@@ -6,7 +6,7 @@ import Home from './Home/Home';
 import Cursos from './Cursos/Cursos';
 
 function App() {
-  const [pagina, setPagina] = useState(Constantes.PAGINAS.HOME);
+  const [pagina, setPagina] = useState(Constantes.PAGINAS.CURSOS);
 
   return (
     <div className="App">
