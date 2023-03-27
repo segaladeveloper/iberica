@@ -48,3 +48,22 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/*** Service ***/
+.service-item {
+  background: var(--light);
+  transition: .5s;
+}
+
+  .service-item:hover {
+      margin-top: -10px;
+      background: var(--primary);
+  }
+
+  .service-item * {
+      transition: .5s;
+  }
+
+  .service-item:hover * {
+      color: var(--light) !important;
+  }
