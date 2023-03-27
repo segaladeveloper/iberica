@@ -10,11 +10,14 @@ function App() {
 
   return (
     <div className="App">
+      <div onClick={() => setPagina(Constantes.PAGINAS.HOME)}>HOME</div>
+      <div onClick={() => setPagina(Constantes.PAGINAS.CURSOS)}>CURSOS</div>
+
     
-      {page === Constantes.PAGINAS.HOME ?
+      {pagina === Constantes.PAGINAS.HOME ?
         <Home />
       : <></>}
-      {page === Constantes.PAGINAS.CURSOS ?
+      {pagina === Constantes.PAGINAS.CURSOS ?
         <Cursos />
       : <></>}
 

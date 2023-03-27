@@ -24,7 +24,7 @@ const Cursos = () => {
        </div>
       <h1>Meus cursos</h1>
       {cursos?.map(curso => {
-        return <h2>{curso}</h2>
+        return <h2>{curso.nome}</h2>
       })}
     </div>
   );
