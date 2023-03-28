@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import '../App.css';
+import App from "../App";
+
 
 function Navbar(){
     const navRef = useRef();
@@ -13,8 +15,9 @@ function Navbar(){
         <header>
             <h3>Logo</h3>
             <nav ref={navRef}> 
-                <a href="/#">Home</a>
-                <a href="/#">Cursos</a>
+                <a href="/#" onClick={App.setPagina(App.Constantes.PAGINAS.HOME)}>Home</a>
+                
+                <a href="/.Pages/Cursos" >Cursos</a>
                 <a href="/#">Instituições</a>
                 <a href="/#">Login</a>
                 <a href="/#">Registro</a>

@@ -1,6 +1,9 @@
 const PAGINAS = {
     HOME: 'HOME',
-    CURSOS: 'CURSOS'
+    CURSOS: 'CURSOS',
+    INSTITUICOES: 'INSTITUICOES',
+    LOGIN: 'LOGIN',
+    REGISTRO: 'REGISTRO'
 }
 
 const Constantes = {
