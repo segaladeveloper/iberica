@@ -11,6 +11,7 @@ specifiers:
   '@testing-library/user-event': ^14.4.3
   react: ^17.0.2
   react-dom: ^17.0.0
+  react-icons: ^4.8.0
   react-scripts: ^5.0.1
   thin-backend: ^0.12.1
   thin-backend-react: ^0.10.1
@@ -27,6 +28,7 @@ dependencies:
   '@testing-library/user-event': 14.4.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-icons: 4.8.0_react@17.0.2
   react-scripts: 5.0.1_react@17.0.2
   thin-backend: 0.12.1
   thin-backend-react: 0.10.1_c4msrvx3lo4zk5g5swi2j4wsnq
@@ -8577,6 +8579,14 @@ packages:
 
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
+    dev: false
+
+  /react-icons/4.8.0_react@17.0.2:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /react-is/16.13.1:
