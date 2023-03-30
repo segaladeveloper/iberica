@@ -3,7 +3,8 @@ const PAGINAS = {
     CURSOS: 'CURSOS',
     INSTITUICOES: 'INSTITUICOES',
     LOGIN: 'LOGIN',
-    REGISTRO: 'REGISTRO'
+    REGISTRO: 'REGISTRO',
+    CADASTRO: 'CADASTRO'
 }
 
 const Constantes = {
