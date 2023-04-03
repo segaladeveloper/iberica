@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 /* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap'); */
 
+.thin-auth {
+  
+}
+
+.thin-auth-icon-container {
+  display: none;
+}
+
 body {
   background-color: #F5F5F5;
   color: #424242;

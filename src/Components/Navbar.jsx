@@ -4,11 +4,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import './style.css';
 import Constantes from '../Constantes';
 import LogoIberica from "../Imagens/logo_Iberica.jpeg";
+import { logout } from 'thin-backend';
 
 
 
-
-function Navbar({setPagina, setUserLogado}){
+function Navbar({setPagina, userLogado}){
     const navRef = useRef();
 
 
@@ -18,8 +18,8 @@ function Navbar({setPagina, setUserLogado}){
 
     return (
         <header>
-            <div>Logo
-                {/* <img src={LogoIberica}/> */}
+            <div>Logo  
+                { userLogado?.email}
             </div>
 
 
@@ -28,8 +28,8 @@ function Navbar({setPagina, setUserLogado}){
                 <a onClick={() => setPagina(Constantes.PAGINAS.CURSOS)}>Cursos</a>
                 <a onClick={() => setPagina(Constantes.PAGINAS.INSTITUICOES)}>Instituições</a>
 
-                {setUserLogado === "true"? 
-                    <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Log Out</a>
+                {userLogado ? 
+                    <a onClick={logout}>Log Out</a>
                 :
                 <>
                     <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Log In</a>

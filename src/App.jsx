@@ -1,27 +1,32 @@
 import './App.css';
 // import { useCurrentUser } from 'thin-backend-react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Constantes from './Constantes';
 import Home from './Pages/Home/Home';
 import Cursos from './Pages/Cursos/Cursos';
 import Instituicoes from './Pages/Instituicoes/Instituicoes';
-import Login from './Pages/Login/Login';
+import { useCurrentUser } from 'thin-backend-react';
 import Registro from './Pages/Registro/Registro';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Navbar from './Components/Navbar';
+import { LoginAndSignUp } from 'thin-backend-react/auth-ui';
 
 function App() {
   const [pagina, setPagina] = useState(Constantes.PAGINAS.HOME);
-  const [userLogado, setUserLogado] = useState("false");
+  const userLogado = useCurrentUser();
+
+  useEffect(() => {
+    setPagina(Constantes.PAGINAS.HOME)
+  }, [userLogado]);
 
   return (
     <div className="App">
-      <Navbar setPagina={setPagina} userLogado={setUserLogado}/>
+      <Navbar setPagina={setPagina} userLogado={userLogado}/>
     
       {pagina === Constantes.PAGINAS.HOME ? <Home /> : <></>}
       {pagina === Constantes.PAGINAS.CURSOS ? <Cursos /> : <></>}
       {pagina === Constantes.PAGINAS.INSTITUICOES ? <Instituicoes /> : <></>}
-      {pagina === Constantes.PAGINAS.LOGIN ? <Login /> : <></>}
+      {pagina === Constantes.PAGINAS.LOGIN ? <LoginAndSignUp /> : <></>}
       {pagina === Constantes.PAGINAS.REGISTRO ? <Registro/> : <></>}
       {pagina === Constantes.PAGINAS.CADASTRO ? <Cadastro/> : <></>}
 
