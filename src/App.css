@@ -1,13 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap'); */
 
 .thin-auth {
-  
+
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: #fff;
+
+  width: 390px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 60px 55px 33px 55px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .thin-auth-icon-container {
   display: none;
 }
+
+.thin-auth-box h1 {
+  font-size: 0; 
+}
+
+/* .thin-auth-box p {
+  font-size: 0; 
+} */
+
+.thin-auth-box h1::after {
+  content: "BEM VINDO";
+  font-size: 30px !important;
+}
+
+/* .thin-auth-box p::after {
+  content: "Esqueceu sua senha?";
+  font-size: 16px !important;
+} */
+
+.thin-auth-description {
+  padding: 15px;
+  font-size: 0; /*Esconder texto original*/
+}
+
+.thin-auth-description::after {
+  content: "Faça login para acessar a área de Admin";
+  font-size: 16px !important;
+  
+}
+
 
 body {
   background-color: #F5F5F5;
