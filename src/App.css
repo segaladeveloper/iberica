@@ -3,11 +3,12 @@
 .thin-auth {
 
   min-height: 50vh;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+
   color: #fff;
 
   width: 390px;
@@ -18,6 +19,25 @@
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
+.thin-auth-form-group {
+  font-size: 16px;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+.thin-auth-form-group::before {
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #6a7dfe;
+  background: -webkit-linear-gradient(to left, #21d4fd, #218d2a);
+  background: -o-linear-gradient(to left, #21d4fd, #218d2a);
+  background: -moz-linear-gradient(to left, #21d4fd, #218d2a);
+  background: linear-gradient(to left, #21d4fd, #218d2a);
+}
+
 .thin-auth-icon-container {
   display: none;
 }
@@ -26,14 +46,43 @@
   font-size: 0; 
 }
 
-/* .thin-auth-box p {
+.thin-auth-box p {
   font-size: 0; 
-} */
+}
+
 
 .thin-auth-box h1::after {
-  content: "BEM VINDO";
+  content: "BEM-VINDO";
   font-size: 30px !important;
 }
+
+.thin-auth-box button {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  height: 40px;
+  background: #6a7dfe;
+  background: -webkit-linear-gradient(to left, #21d4fd, #218d2a);
+  background: -o-linear-gradient(to left, #21d4fd, #218d2a);
+  background: -moz-linear-gradient(to left, #21d4fd, #218d2a);
+  background: linear-gradient(to left, #21d4fd, #218d2a);
+}
+
+.thin-auth-box button:hover {
+  cursor: pointer;
+}
+
 
 /* .thin-auth-box p::after {
   content: "Esqueceu sua senha?";
@@ -46,11 +95,18 @@
 }
 
 .thin-auth-description::after {
-  content: "Faça login para acessar a área de Admin";
+  content: "Acesso restrito.  Faça login !!!";
   font-size: 16px !important;
   
 }
 
+.thin-auth-built-with{
+  display: none;
+}
+
+/* .thin-auth-signup{
+  display: none;
+} */
 
 body {
   background-color: #F5F5F5;

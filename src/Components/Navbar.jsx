@@ -32,12 +32,12 @@ function Navbar({setPagina, userLogado}){
                     <a onClick={logout}>Log Out</a>
                 :
                 <>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Log In</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.REGISTRO)}>Registro</a>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Admin</a>
+                    {/* <a onClick={() => setPagina(Constantes.PAGINAS.REGISTRO)}>Registro</a> */}
                 </> 
                 }
 
-                <a onClick={() => setPagina(Constantes.PAGINAS.CADASTRO)}>Cadastro</a>
+                {/* <a onClick={() => setPagina(Constantes.PAGINAS.CADASTRO)}>Cadastro</a> */}
                 <button className="nav-btn nav-close-btn" onClick={showNavBar}>
                     <FaTimes/>
                 </button>
