@@ -83,7 +83,6 @@
   cursor: pointer;
 }
 
-
 /* .thin-auth-box p::after {
   content: "Esqueceu sua senha?";
   font-size: 16px !important;
@@ -115,7 +114,6 @@ body {
 
 .App {
   text-align: center;
-  padding: 10px 20px 10px 20px;
 }
 
 .hidden {

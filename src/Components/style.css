@@ -7,6 +7,14 @@
     font-family: 'Titillium Web', sans-serif;
 }
 
+.logo {
+    margin-left: 10px;
+}
+
+img {
+    height: 70px;
+}
+
 :root{
     --mainColor: #101730;
     --mainColorLight: #5767aa;
@@ -23,6 +31,9 @@ header{
     background-color: var(--mainColor);
     color: var(--textColor);
     font-size: calc(11px + 2vmin);
+
+    margin-bottom: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 nav a{

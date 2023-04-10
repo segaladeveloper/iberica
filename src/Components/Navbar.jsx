@@ -3,14 +3,11 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import './style.css';
 import Constantes from '../Constantes';
-import LogoIberica from "../Imagens/logo_Iberica.jpeg";
 import { logout } from 'thin-backend';
-
-
+import { loginWithRedirect } from 'thin-backend';
 
 function Navbar({setPagina, userLogado}){
     const navRef = useRef();
-
 
     const showNavBar = () => {
         navRef.current.classList.toggle('responsive_nav');
@@ -18,10 +15,7 @@ function Navbar({setPagina, userLogado}){
 
     return (
         <header>
-            <div>Logo  
-                { userLogado?.email}
-            </div>
-
+            <div className="logo"><img src={'logo192.png'} alt='logo'/></div>
 
             <nav ref={navRef}> 
                 <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>                
