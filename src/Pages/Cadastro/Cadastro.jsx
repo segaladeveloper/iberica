@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './style.css';
 import { TextField, Button } from '@mui/material';
-import { updateRecord, createRecord } from 'thin-backend';
+import { createRecord } from 'thin-backend';
 
 const Cadastro = () => {
   const [nome, setNome] = useState('');

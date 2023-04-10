@@ -35,6 +35,11 @@
   font-size: 30px !important;
 }
 
+#sessions-new > div > div > div.mx-auto.mt-5.p-5.shadow-lg.rounded > p.text-center {
+  content: "Faça login para acessar a área de Admin";
+  font-size: 16px !important;
+}
+
 /* .thin-auth-box p::after {
   content: "Esqueceu sua senha?";
   font-size: 16px !important;
@@ -59,7 +64,6 @@ body {
 
 .App {
   text-align: center;
-  padding: 10px 20px 10px 20px;
 }
 
 .hidden {

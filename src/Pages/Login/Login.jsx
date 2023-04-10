@@ -44,7 +44,7 @@ const Login = () => {
 
             <div className="text-center">
               <span className="txt1">Não possui conta?</span>
-              <a href="#" className="txt2">Criar conta.</a>
+              {/* <a href="#" className="txt2">Criar conta.</a> */}
             </div>
 
           </form>

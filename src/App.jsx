@@ -9,13 +9,13 @@ import { useCurrentUser } from 'thin-backend-react';
 import Registro from './Pages/Registro/Registro';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Navbar from './Components/Navbar';
-import { LoginAndSignUp } from 'thin-backend-react/auth-ui';
 
 function App() {
   const [pagina, setPagina] = useState(Constantes.PAGINAS.HOME);
   const userLogado = useCurrentUser();
 
   useEffect(() => {
+    console.log('userLogado', userLogado)
     setPagina(Constantes.PAGINAS.HOME)
   }, [userLogado]);
 
@@ -26,7 +26,6 @@ function App() {
       {pagina === Constantes.PAGINAS.HOME ? <Home /> : <></>}
       {pagina === Constantes.PAGINAS.CURSOS ? <Cursos /> : <></>}
       {pagina === Constantes.PAGINAS.INSTITUICOES ? <Instituicoes /> : <></>}
-      {pagina === Constantes.PAGINAS.LOGIN ? <LoginAndSignUp /> : <></>}
       {pagina === Constantes.PAGINAS.REGISTRO ? <Registro/> : <></>}
       {pagina === Constantes.PAGINAS.CADASTRO ? <Cadastro/> : <></>}
 
