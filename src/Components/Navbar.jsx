@@ -27,6 +27,7 @@ function Navbar({setPagina, userLogado}){
                 :
                 <>
                     <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Admin</a>
+                    <a onClick={loginWithRedirect}>Log In</a>
                 </> 
                 }
 

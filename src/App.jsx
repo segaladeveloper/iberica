@@ -6,7 +6,6 @@ import Home from './Pages/Home/Home';
 import Cursos from './Pages/Cursos/Cursos';
 import Instituicoes from './Pages/Instituicoes/Instituicoes';
 import { useCurrentUser } from 'thin-backend-react';
-import Registro from './Pages/Registro/Registro';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Navbar from './Components/Navbar';
 import { LoginAndSignUp } from 'thin-backend-react/auth-ui';
