@@ -18,14 +18,21 @@ function Navbar({setPagina, userLogado}){
             <div className="logo"><img src={'logo192.png'} alt='logo'/></div>
 
             <nav ref={navRef}> 
-                <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>                
-                <a onClick={() => setPagina(Constantes.PAGINAS.CURSOS)}>Cursos</a>
-                <a onClick={() => setPagina(Constantes.PAGINAS.INSTITUICOES)}>Instituições</a>
+                {/* <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>      */}
+                
 
                 {userLogado ? 
+                <>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_NIVEL)}>Nivel</a>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_INSTITUICAO)}>Instituições</a>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_CURSO)}>Cursos</a>
                     <a onClick={logout}>Log Out</a>
+                </>
                 :
                 <>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.NIVEL)}>Nivel</a>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.INSTITUICOES)}>Instituições</a>
+                    <a onClick={() => setPagina(Constantes.PAGINAS.CURSOS)}>Cursos</a>
                     <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Admin</a>
                     <a onClick={loginWithRedirect}>Log In</a>
                 </> 

@@ -3,7 +3,7 @@ import './style.css';
 import { TextField, Button } from '@mui/material';
 import { createRecord } from 'thin-backend';
 
-const Cadastro = () => {
+const Cad_Instituicao = () => {
   const [nome, setNome] = useState('');
   const [descricao, setDescricao] = useState('');
 
@@ -35,7 +35,7 @@ const Cadastro = () => {
         <TextField required id="nome" label="Nome Instituição" variant="outlined" value={nome} onChange={(e) => validaNome(e.target.value)}/>
       </div>
       <div>
-        <TextField required id="descricao" label="Descrição" variant="outlined" value={nome} onChange={(e) => validaDescricao(e.target.value)}/>
+        <TextField required id="descricao" label="Descrição" variant="outlined" value={descricao} onChange={(e) => validaDescricao(e.target.value)}/>
       </div>
       <Button variant="contained" onClick={salvar}>Salvar</Button> 
     </div>
@@ -43,4 +43,4 @@ const Cadastro = () => {
 
 }
 
-export default Cadastro
+export default Cad_Instituicao
