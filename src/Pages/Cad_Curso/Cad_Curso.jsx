@@ -247,19 +247,32 @@ const Cad_Curso = () => {
         <div>
           <TextField required id="preco" label="Valor" variant="outlined" value={preco} onChange ={(e) => validaPreco(e.target.value)}/>
         </div>
-        <FormControl>
-          <FormControlLabel
-              control={<Checkbox 
-                        checked={preferido}
-                        onChange={handleChangePreferido} 
-                        name="preferido" 
-                      />}
-              label="Preferido"
-          />
-        </FormControl>
         <div>
-      </div>
-        <Button variant="contained" onClick={salvar}>Salvar</Button> 
+          <FormControl>
+            <FormControlLabel
+                control={<Checkbox 
+                          checked={preferido}
+                          onChange={handleChangePreferido} 
+                          name="preferido" 
+                        />}
+                label="Preferido"
+            />
+          </FormControl>
+        </div>
+        <div></div>
+     
+        {/* carregamento das imagens do curso */}
+        {/* <div>
+          <label>Imagem: </label>
+          <input type="file" name="fileUploaded" hidden="true"/>
+          <input type="submit" value="Enviar arquivo"/>
+        </div>
+        <div>
+          <label>Imagem pequena: </label>
+          <input type="file" name="fileUploadedSmall" hidden="true"/>
+          <input type="submit" value="Enviar arquivo"/>
+        </div> */}
+          <Button variant="contained" onClick={salvar}>Salvar</Button> 
       </div>
       
     );

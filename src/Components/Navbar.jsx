@@ -16,11 +16,10 @@ function Navbar({setPagina, userLogado}){
     return (
         <header>
             <div className="logo"><img src={'logo192.png'} alt='logo'/></div>
-
+            
             <nav ref={navRef}> 
-                {/* <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>      */}
+                <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>
                 
-
                 {userLogado ? 
                 <>
                     <a onClick={() => setPagina(Constantes.PAGINAS.CAD_NIVEL)}>Nivel</a>
