@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import * as React from 'react';
 import './style.css';
 import { query } from 'thin-backend';
-import { TextField, Select, MenuItem, InputLabel, Button, Snackbar, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { TextField, Select, MenuItem, InputLabel, Button, Snackbar, FormControlLabel, Checkbox } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import { createRecord } from 'thin-backend';
 
@@ -15,6 +15,7 @@ const Cad_Curso = () => {
     const [preco, setPreco] = useState("0,00");
     const [preferido, setPreferido] = useState(false);
 
+    const [cursos, setCursos] = useState([]);
     const [niveis, setNiveis] = useState([]);
     const [instituicoes, setInstituicoes] = useState([]);
 
@@ -31,6 +32,10 @@ const Cad_Curso = () => {
     const handleChangeInstituicao = (event) => {
       setInstituicao(event.target.value);
     };
+
+    const handleChangePreferido = (event) => {
+      setPreferido(event.target.checked);
+  };
   
     const handleClose = () => {
       setOpenNivel(false);
@@ -47,6 +52,12 @@ const Cad_Curso = () => {
     };
   
     useEffect(() => {
+      query('curso').fetch().then(results => {
+        setCursos(results)
+      })
+    }, []);
+
+    useEffect(() => {
       query('nivel').fetch().then(results => {
         setNiveis(results)
       })
@@ -60,8 +71,8 @@ const Cad_Curso = () => {
   
     function salvar () {
       if (validadaCampos()){
-        createRecord('curso', { nome: nome, nivel_id: nivel, instituicao_id: instituicao, descricao_curta: descricao_curta,
-        descricao_detalhada: descricao_longa, preco: preco, imagem_url: null, imagem_thumnail_url: null, preferido:preferido}).then(
+        createRecord('curso', { nome: nome, nivelId: nivel, instituicaoId: instituicao, descricaoCurta: descricao_curta,
+        descricaoDetalhada: descricao_longa, preco: preco, imagemUrl: null, imagemThumnailUrl: null, preferido:preferido}).then(
           function success(result) {
             setMessage('Curso criado com sucesso com ID:' + result.id);
             setShowMessage(true);
@@ -106,11 +117,22 @@ const Cad_Curso = () => {
         return false;
       }
 
-      if (preco.toString() === "0,00"){
+      if (preco === "0,00"){
         setMessage('Campo Valor é obrigatório');
         setShowMessage(true);
         return false;
       }
+
+      if (nome.length > 1 && nivel.length > 1 && instituicao.length > 1){
+        var contaCursos = cursos.filter(curso=>curso.nome === nome && curso.nivelId === nivel && curso.instituicaoId === instituicao).length;
+        if (contaCursos > 0){
+          setMessage('Curso já existe na base');
+          setShowMessage(true);
+          return false;
+        }
+        
+      }
+
 
       return true;
     }
@@ -122,7 +144,7 @@ const Cad_Curso = () => {
         setShowMessage(true);
         return;
       }
-      setNome(nome)
+      setNome(nome);
     }
 
     function validaDescricao (descricao_curta) {
@@ -132,7 +154,7 @@ const Cad_Curso = () => {
         setShowMessage(true);
         return;
       }
-      setDescricaoCurta(descricao_curta)
+      setDescricaoCurta(descricao_curta);
     }
 
     function validaDescricaoLonga (descricao_longa) {
@@ -146,14 +168,21 @@ const Cad_Curso = () => {
     }
 
     function validaPreco (preco) {
-      if (preco.length > 100)
+      if (preco.length > 15)
       {
-        setMessage('Máximo de 10 caracteres para o campo Valor');
+        setMessage('Máximo de 15 caracteres para o campo Valor');
         setShowMessage(true);
         return;
       }
-      setPreco(preco);
+
+      var precoFormatado = preco;
+      if (preco.length > 3 && preco.substring(preco.length - 3, preco.length - 2) === ",") {
+        precoFormatado = preco.replace(/\./g, '#').replace(/,/g, '.').replace(/#/g,',');
+      }
+
+      setPreco(precoFormatado);
     }
+
 
     return (
 
@@ -216,22 +245,23 @@ const Cad_Curso = () => {
           <TextField required id="descricaoLonga" label="Descrição Longa" variant="outlined" value={descricao_longa} onChange={(e) => validaDescricaoLonga(e.target.value)}/>
         </div>
         <div>
-          <TextField required id="preco" label="Valor" variant="outlined" value={preco} onChange={(e) => validaPreco(e.target.value)}/>
+          <TextField required id="preco" label="Valor" variant="outlined" value={preco} onChange ={(e) => validaPreco(e.target.value)}/>
         </div>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Preferido</FormLabel>
-          <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="false"
-            name="radio-buttons-group"
-          >
-            <FormControlLabel value="true" control={<Radio />} label="Sim" />
-            <FormControlLabel value="false" control={<Radio />} label="Não" />
-
-          </RadioGroup>
+          <FormControlLabel
+              control={<Checkbox 
+                        checked={preferido}
+                        onChange={handleChangePreferido} 
+                        name="preferido" 
+                      />}
+              label="Preferido"
+          />
         </FormControl>
+        <div>
+      </div>
         <Button variant="contained" onClick={salvar}>Salvar</Button> 
       </div>
+      
     );
 
 
