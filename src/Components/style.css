@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     /* font-family: Poppins,sans-serif; */
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Nunito', 'Titillium Web', sans-serif;
 }
 
 .logo {
@@ -16,34 +16,39 @@ img {
 }
 
 :root{
+    --verdin: #29ca8e;
     --mainColor: #101730;
     --mainColorLight: #5767aa;
-    --secondaryColor: #DB2B39;
-    --textColor: #eee;
+    --secondaryColor: #FFFFFF;
+    --textColor: #575757;
 }
 
-header{
+header {
+    border-top: 5px solid var(--verdin);;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 79px;
     padding: 0, 2rem;
-    background-color: var(--mainColor);
     color: var(--textColor);
-    font-size: calc(7px + 2vmin);
+    font-size: 14px;
 
-    margin-bottom: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
 }
 
-nav a{
-    margin: 0 2rem;
+nav a {
     color: var(--textColor);
     text-decoration: none;
+    transition: all 0.2s linear;
+    
+    cursor: pointer;
+    height: 100%;
+    padding: 29px;
 }
 
 nav a:hover{
     color: var(--secondaryColor);
+    background-color: var(--verdin);
 }
 
 header .nav-btn{
@@ -74,7 +79,7 @@ header .nav-btn{
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
-        background-color: var(--mainColor);
+        background-color: var(--secondaryColor);
         transition: 1s;
         transform: translateY(-100vh);
     }

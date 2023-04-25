@@ -18,7 +18,7 @@ function Navbar({setPagina, userLogado}){
             <div className="logo"><img src={'logo192.png'} alt='logo'/></div>
             
             <nav ref={navRef}> 
-                <a onClick={() => setPagina(Constantes.PAGINAS.HOME)}>Home</a>
+                <a onClick={() => {showNavBar(); setPagina(Constantes.PAGINAS.HOME)}}>Home</a>
                 
                 {userLogado ? 
                 <>
