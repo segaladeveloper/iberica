@@ -1,0 +1,30 @@
+.carousel {
+    overflow: hidden;
+}
+
+.inner {
+    white-space: nowrap;
+    transition: transform 0.8s;
+}
+
+.carousel-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: var(--verdin);
+    color: #fff;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+}
+
+.indicators>svg {
+    margin: 5px;
+}
+
+.indicators>svg.active {
+    color: var(--verdin);
+}
