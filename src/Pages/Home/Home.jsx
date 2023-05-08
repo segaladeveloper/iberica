@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Carousel, { CarouselItem } from '../../Components/Carousel/Carousel';
 
 const Home = () => {
  
@@ -37,6 +38,13 @@ const Home = () => {
         <div className='sectionTitle'>
           <h2>Professores</h2>
           <small>Conheça profisionais especializados</small>
+          <br/><br/>
+
+          <Carousel>
+            <CarouselItem><img src={'logo192.png'} alt='logo'/></CarouselItem>
+            <CarouselItem><img src={'logo512.png'} alt='logo'/></CarouselItem>
+            <CarouselItem><img src={'logo192.png'} alt='logo'/></CarouselItem>
+          </Carousel>
         </div>
       </div>
 
