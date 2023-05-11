@@ -17,13 +17,13 @@ function Navbar({pagina, setPagina, userLogado}){
         {rotulo: 'Nivel', chave: Constantes.PAGINAS.NIVEL},
         {rotulo: 'Instituições', chave: Constantes.PAGINAS.INSTITUICOES},
         {rotulo: 'Cursos', chave: Constantes.PAGINAS.CURSOS},
-        {rotulo: 'Admin', chave: Constantes.PAGINAS.LOGIN}        
+        // {rotulo: 'Admin', chave: Constantes.PAGINAS.LOGIN}        
     ]
 
     const paginasPrivadas = [
         {rotulo: 'Nivel', chave: Constantes.PAGINAS.CAD_NIVEL},
-        {rotulo: 'Instituições', chave: Constantes.PAGINAS.CAD_NIVEL},
-        {rotulo: 'Cursos', chave: Constantes.PAGINAS.CAD_NIVEL}
+        {rotulo: 'Instituições', chave: Constantes.PAGINAS.CAD_INSTITUICAO},
+        {rotulo: 'Cursos', chave: Constantes.PAGINAS.CAD_CURSO}
     ]
 
     return (
