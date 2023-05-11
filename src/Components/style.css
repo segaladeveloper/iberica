@@ -24,7 +24,7 @@ img {
 }
 
 header {
-    border-top: 5px solid var(--verdin);;
+    border-top: 6px solid var(--verdin);;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,6 +47,11 @@ nav a {
 }
 
 nav a:hover{
+    color: var(--secondaryColor);
+    background-color: var(--verdin);
+}
+
+.activePage {
     color: var(--secondaryColor);
     background-color: var(--verdin);
 }

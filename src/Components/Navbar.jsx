@@ -6,33 +6,48 @@ import Constantes from '../Constantes';
 import { logout } from 'thin-backend';
 import { loginWithRedirect } from 'thin-backend';
 
-function Navbar({setPagina, userLogado}){
+function Navbar({pagina, setPagina, userLogado}){
     const navRef = useRef();
 
     const showNavBar = () => {
         navRef.current.classList.toggle('responsive_nav');
     }
 
+    const paginasPublicas = [
+        {rotulo: 'Nivel', chave: Constantes.PAGINAS.NIVEL},
+        {rotulo: 'Instituições', chave: Constantes.PAGINAS.INSTITUICOES},
+        {rotulo: 'Cursos', chave: Constantes.PAGINAS.CURSOS},
+        {rotulo: 'Admin', chave: Constantes.PAGINAS.LOGIN}        
+    ]
+
+    const paginasPrivadas = [
+        {rotulo: 'Nivel', chave: Constantes.PAGINAS.CAD_NIVEL},
+        {rotulo: 'Instituições', chave: Constantes.PAGINAS.CAD_NIVEL},
+        {rotulo: 'Cursos', chave: Constantes.PAGINAS.CAD_NIVEL}
+    ]
+
     return (
         <header>
             <div className="logo"><img src={'logo192.png'} alt='logo'/></div>
             
             <nav ref={navRef}> 
-                <a onClick={() => {showNavBar(); setPagina(Constantes.PAGINAS.HOME)}}>Home</a>
+                <a className={pagina === Constantes.PAGINAS.HOME ? 'activePage' : ''} 
+                    onClick={() => {showNavBar(); setPagina(Constantes.PAGINAS.HOME)}}>Home</a>
                 
                 {userLogado ? 
                 <>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_NIVEL)}>Nivel</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_INSTITUICAO)}>Instituições</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.CAD_CURSO)}>Cursos</a>
+                    {paginasPrivadas.map(p => {
+                        return <a className={pagina === p.chave ? 'activePage' : ''} 
+                        onClick={() => setPagina(p.chave)}>{p.rotulo}</a>    
+                    })}
                     <a onClick={logout}>Log Out</a>
                 </>
                 :
                 <>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.NIVEL)}>Nivel</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.INSTITUICOES)}>Instituições</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.CURSOS)}>Cursos</a>
-                    <a onClick={() => setPagina(Constantes.PAGINAS.LOGIN)}>Admin</a>
+                    {paginasPublicas.map(p => {
+                        return <a className={pagina === p.chave ? 'activePage' : ''} 
+                        onClick={() => setPagina(p.chave)}>{p.rotulo}</a>    
+                    })}
                     <a onClick={loginWithRedirect}>Log In</a>
                 </> 
                 }

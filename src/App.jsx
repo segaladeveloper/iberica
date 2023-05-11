@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setPagina={setPagina} userLogado={userLogado}/>
+      <Navbar pagina={pagina} setPagina={setPagina} userLogado={userLogado}/>
     
       {pagina === Constantes.PAGINAS.HOME ? <Home /> : <></>}
       {pagina === Constantes.PAGINAS.NIVEL ? <Niveis /> : <></>}

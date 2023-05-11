@@ -39,13 +39,13 @@ const Home = () => {
           <h2>Professores</h2>
           <small>Conheça profisionais especializados</small>
           <br/><br/>
+        </div>
 
-          <Carousel>
+        <Carousel>
             <CarouselItem><img src={'logo192.png'} alt='logo'/></CarouselItem>
             <CarouselItem><img src={'logo512.png'} alt='logo'/></CarouselItem>
             <CarouselItem><img src={'logo192.png'} alt='logo'/></CarouselItem>
           </Carousel>
-        </div>
       </div>
 
     </div>
